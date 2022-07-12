@@ -13,8 +13,8 @@ public class Main {
     public static BigInteger add(int a, int b){
         return BigInteger.valueOf(a).add(BigInteger.valueOf(b));
     }
-    public static int mul(int a,int b){
-        return a*b;
+    public static BigInteger mul(int a,int b){
+        return BigInteger.valueOf(a).multiply(BigInteger.valueOf(b));
     }
 
     public static int sub(int a,int b){
