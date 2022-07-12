@@ -31,7 +31,8 @@ pipeline {
     post{
         always{
             archiveArtifacts allowEmptyArchive: true,
-            artifacts: '\'**/*.jar\'',
+            archiveArtifacts allowEmptyArchive: true,
+            artifacts: '',
             fingerprint: true,
             followSymlinks: false,
             onlyIfSuccessful: true
