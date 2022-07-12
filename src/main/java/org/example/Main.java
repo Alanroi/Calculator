@@ -20,7 +20,7 @@ public class Main {
     public static BigInteger sub(int a,int b){
         return BigInteger.valueOf(a).subtract(BigInteger.valueOf(b));
     }
-    public static int div(int a,int b){
-        return a/b;
+    public static BigInteger div(int a,int b){
+        return BigInteger.valueOf(a).divide(BigInteger.valueOf(b));
     }
 }
