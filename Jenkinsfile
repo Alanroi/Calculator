@@ -31,7 +31,7 @@ pipeline {
     post{
         always{
             archiveArtifacts allowEmptyArchive: true,
-            artifacts: '',
+            artifacts: '**',
             fingerprint: true,
             followSymlinks: false,
             onlyIfSuccessful: true
