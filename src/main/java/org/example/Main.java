@@ -1,5 +1,7 @@
 package org.example;
 
+import java.math.BigInteger;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -15,7 +17,7 @@ public class Main {
         return a*b;
     }
 
-    public static BigInteger sub(int a,int b){
+    public static BigInteger sub(int a, int b){
         return BigInteger.valueOf(a).subtract(BigInteger.valueOf(b));
     }
     public static int div(int a,int b){
