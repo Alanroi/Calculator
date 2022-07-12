@@ -14,7 +14,7 @@ pipeline {
             }
             steps {
                 echo "Deploying to ${params.ENVIRONMENT}"
-                bat "mvn clean install"
+                mvn clean install
             }
         }
         stage ('Deploy to production environment') {
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 input message: 'Confirm deployment to production...', ok: 'Deploy'
                 echo "Deploying to ${params.ENVIRONMENT}"
-                bat "mvn clean install"
+                mvn clean install
             }
         }
     }
