@@ -1,5 +1,7 @@
 package org.example;
 
+import java.math.BigInteger;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -8,8 +10,8 @@ public class Main {
         System.out.println(mul(1,6));
     }
 
-    public static int add(int a,int b){
-        return a+b;
+    public static BigInteger add(int a, int b){
+        return BigInteger.valueOf(a).add(BigInteger.valueOf(b));
     }
     public static int mul(int a,int b){
         return a*b;
