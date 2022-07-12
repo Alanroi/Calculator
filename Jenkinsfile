@@ -2,21 +2,29 @@ pipeline {
     agent any
     parameters {
         choice(name: 'ENVIRONMENT',
-            choices: ['QA' , 'PRODUCTION'],
+            choices: ['QA' , 'PRODUCTION','TEST'],
             description: 'Choose the environment for this deployment')
     }
 
     stages {
         stage ('Deploy to QA environments') {
             when {
-                // Only deploy if the environment is NOT production
-                expression { params.ENVIRONMENT != 'PRODUCTION' }
+                expression { params.ENVIRONMENT == 'QA' }
             }
             steps {
                 echo "Deploying to ${params.ENVIRONMENT}"
                 bat "mvn clean install"
             }
         }
+        stage ('Deploy to TEST environments') {
+                    when {
+                        expression { params.ENVIRONMENT == 'TEST' }
+                    }
+                    steps {
+                        echo "Deploying to ${params.ENVIRONMENT}"
+                        bat "mvn clean test"
+                    }
+                }
         stage ('Deploy to production environment') {
             when {
                 expression { params.ENVIRONMENT == 'PRODUCTION' }
