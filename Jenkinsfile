@@ -28,4 +28,13 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            archiveArtifacts allowEmptyArchive: true,
+            artifacts: '\'**/*.jar\'',
+            fingerprint: true,
+            followSymlinks: false,
+            onlyIfSuccessful: true
+        }
+    }
 }
